@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Java Script</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black">
+    <main class="flex flex-col p-4">
+        <h1 class="text-xl- text-center mb-4 font-bold text-orange-700">KALKULATOR</h1>
+        <input class="border border-black-gray-500 rounded-lg p-2" id="angka1" type="number" placeholder="Angka Pertama" />
+        <input class="border border-black-gray-500 rounded-lg p-2 mt-2"x id="angka2" type="number" placeholder="Angka Kedua" />
+        <p class="bg-amber-300 p-2 rounded-xl font-bold text-orange-700 mt-4 font-medium hidden" id="hasil"></p>
+        <button class="bg-red-600 p-2 rounded-xl text-white mt-2 font-medium" onclick="jumlah()">PENJUMLAHAN</button>
+        <button class="bg-red-600 p-2 rounded-xl text-white mt-2 font-medium" onclick="kurang()">PENGURANGAN</button>
+        <button class="bg-red-600 p-2 rounded-xl text-white mt-2 font-medium" onclick="perkalian()">PERKALIAN</button>
+        <button class="bg-red-600 p-2 rounded-xl text-white mt-2 font-medium" onclick="pembagian()">PEMBAGIAN</button>
+    </main>
+    
+    <script>
+        // penjumlahan
+        function jumlah() {
+            let angka1 = parseFloat(document.getElementById("angka1").value)
+            let angka2 = parseFloat(document.getElementById("angka2").value)
+            let hasil = angka1 + angka2;
+            
+            console.log(typeof hasil)
+
+            document.getElementById("hasil").textContent = "Hasil Penjumlahan: " + hasil;
+            document.getElementById("hasil").classList.remove("hidden");
+        }
+
+        // pengurangan
+        function kurang() {
+            let angka1 = parseFloat(document.getElementById("angka1").value)
+            let angka2 = parseFloat(document.getElementById("angka2").value)
+            let hasil = angka1 - angka2;
+            
+            document.getElementById("hasil").textContent = "Hasil Pengurangan: " + hasil;
+            document.getElementById("hasil").classList.remove("hidden");
+        }
+
+        // perkalian
+        function perkalian() {
+            let angka1 = parseFloat(document.getElementById("angka1").value)
+            let angka2 = parseFloat(document.getElementById("angka2").value)
+            let hasil = angka1 * angka2;
+            
+            document.getElementById("hasil").textContent = "Hasil Perkalian: " + hasil;
+            document.getElementById("hasil").classList.remove("hidden");
+        }
+
+        // pembagian
+        function pembagian() {
+            let angka1 = parseFloat(document.getElementById("angka1").value)
+            let angka2 = parseFloat(document.getElementById("angka2").value)
+            let hasil = angka1 / angka2;
+            
+            document.getElementById("hasil").textContent = "Hasil Pembagian: " + hasil;
+            document.getElementById("hasil").classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>
